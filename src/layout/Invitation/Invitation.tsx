@@ -2,8 +2,8 @@ import styled from '@emotion/styled';
 import React from 'react';
 import data from 'data.json';
 import Host from '../Contact/Host.tsx';
-import RoundButton from '@/components/RoundButton.tsx';
-import { Caption, Paragraph } from '@/components/Text.tsx';
+// import RoundButton from '@/components/RoundButton.tsx';
+import { Paragraph } from '@/components/Text.tsx';
 import subImg1 from '@/assets/images/5.svg'
 import subImg2 from '@/assets/images/6.svg'
 
@@ -29,44 +29,54 @@ const Invitation = () => {
       </ImageContainer>
         <Paragraph>{greeting.message}</Paragraph>
       <Host />
-      <Caption textAlign={'center'}>{greeting.eventDetail}</Caption>
+      {/* <Caption textAlign={'center'}>{greeting.eventDetail}</Caption> */}
       {/* TODO: 구글캘린더 추가하기 기능을 넣는다면 링크 수정 */}
-      <RoundButton
+      {/* <RoundButton
         target="_blank"
         href=""
         rel="noreferrer">
         구글 캘린더 추가하기
-      </RoundButton>
+      </RoundButton> */}
     </InvitationWrapper>
   );
 };
 
 export default Invitation;
-
 const InvitationWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 20px;
+  padding: 20px;
 `;
 
 const SubTitle = styled.p`
   font-size: 1.1rem;
-  color: #2F2120;
+  color: #2f2120;
   line-height: 140%;
   white-space: pre-line;
+  text-align: center;
+
+  @media (max-width: 768px) {
+    font-size: 1rem;
+  }
 `;
 
 const MainImg = styled.img`
   width: 100%;
-  max-width: 600px;
-  padding-top: 20px;
+  max-width: 450px;
+  height: auto;
+  padding-top: 10px;
+
+  @media (max-width: 768px) {
+    max-width: 90%;
+  }
 `;
 
 const ImageContainer = styled.div`
   position: relative;
   width: 100%;
-  max-width: 500px; /* 원하는 너비로 설정 */
+  max-width: 450px;
   overflow: hidden;
 `;
 
@@ -84,8 +94,14 @@ const OverlayText = styled.div`
   line-height: 1.5rem;
   white-space: pre-line;
   border-radius: 10px;
+
+  @media (max-width: 768px) {
+    font-size: 0.9rem;
+    width: 90%;
+    padding: 8px 16px;
+  }
 `;
 
 const HighlightedText = styled.span`
-  color: navy; /* 특정 문자열에 대한 색상 변경 */
+  color: navy;
 `;

@@ -22,6 +22,7 @@
     "photoswipe": "^5.4.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-kakao-maps-sdk": "^1.1.27",
     "react-naver-maps": "^0.1.2",
     "react-photoswipe-gallery": "^2.2.7"
   },
