@@ -4,8 +4,8 @@ import data from 'data.json';
 import Host from '../Contact/Host.tsx';
 // import RoundButton from '@/components/RoundButton.tsx';
 import { Paragraph } from '@/components/Text.tsx';
-import subImg1 from '@/assets/images/5.svg'
-import subImg2 from '@/assets/images/6.svg'
+import subImg1 from '@/assets/images/sub1.jpg'
+import subImg2 from '@/assets/images/sub2.jpg'
 
 const Invitation = () => {
   const { greeting } = data;
