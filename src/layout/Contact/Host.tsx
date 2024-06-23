@@ -24,7 +24,7 @@ const HostInfo = ({ person }: { person: BrideAndGroom }) => {
         <>
           {person.parents.map((parent, index) => (
             <React.Fragment key={index}>
-              {index > 0 && ' · '}
+              {index > 0 && person.parents!.length > 1 && ' · '}
               {parent.name}
             </React.Fragment>
           ))}
@@ -53,7 +53,7 @@ const HostContainer = styled.div`
 
 const HostDetails = styled.div`
   padding: 0 55px;
-  justify-content: center;
+  justify-content: right;
   white-space: nowrap;
   display: flex;
   gap: 6px;
