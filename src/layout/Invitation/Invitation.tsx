@@ -15,7 +15,7 @@ const Invitation = () => {
   return (
     <InvitationWrapper>
       <MainImg src={subImg1} />
-      <SubTitle>{greeting.intro}</SubTitle>
+      <Paragraph>{greeting.intro}</Paragraph>
       <ImageContainer>
         <MainImg src={subImg2} />
         <OverlayText>
@@ -27,7 +27,7 @@ const Invitation = () => {
           ))}
           </OverlayText>
       </ImageContainer>
-        <Paragraph>{greeting.message}</Paragraph>
+      <Paragraph>{greeting.message}</Paragraph>
       <Host />
       {/* <Caption textAlign={'center'}>{greeting.eventDetail}</Caption> */}
       {/* TODO: 구글캘린더 추가하기 기능을 넣는다면 링크 수정 */}
@@ -46,25 +46,13 @@ const InvitationWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
-  padding: 20px;
-`;
-
-const SubTitle = styled.p`
-  font-size: 1.1rem;
-  color: #2f2120;
-  line-height: 140%;
-  white-space: pre-line;
-  text-align: center;
-
-  @media (max-width: 768px) {
-    font-size: 1rem;
-  }
+  gap: 5px;
+  padding: 5px;
 `;
 
 const MainImg = styled.img`
-  width: 100%;
-  max-width: 450px;
+  width: 90%;
+  max-width: 400px;
   height: auto;
   padding-top: 10px;
 
@@ -76,7 +64,7 @@ const MainImg = styled.img`
 const ImageContainer = styled.div`
   position: relative;
   width: 100%;
-  max-width: 450px;
+  max-width: 400px;
   overflow: hidden;
 `;
 

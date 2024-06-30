@@ -37,6 +37,16 @@ const AccordionWrapper = styled.div`
   border-radius: 8px;
   overflow: hidden;
   transition: all 0.3s ease;
+
+  @media (max-width: 768px) {
+    margin-bottom: 15px;
+    border-radius: 6px;
+  }
+
+  @media (max-width: 480px) {
+    margin-bottom: 10px;
+    border-radius: 4px;
+  }
 `;
 
 const AccordionHeader = styled.div<{ isActive: boolean }>`
@@ -46,9 +56,12 @@ const AccordionHeader = styled.div<{ isActive: boolean }>`
   background-color: #e6ece1;
   padding: 0 15px;
   cursor: pointer;
+
   & > p {
     color: #44484d;
+    font-size: 1rem; /* 기본 글꼴 크기 */
   }
+
   & > span {
     display: flex;
     align-items: center;
@@ -60,8 +73,18 @@ const AccordionHeader = styled.div<{ isActive: boolean }>`
 `;
 
 const AccordionContent = styled.div`
-  font-size: 14px;
+  font-size: 16px;
   text-align: justify;
   padding: 10px 20px;
   background-color: #ffffff;
+
+  @media (max-width: 768px) {
+    font-size: 15px;
+    padding: 8px 15px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 14px;
+    padding: 6px 10px;
+  }
 `;
