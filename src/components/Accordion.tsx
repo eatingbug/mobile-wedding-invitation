@@ -73,18 +73,18 @@ const AccordionHeader = styled.div<{ isActive: boolean }>`
 `;
 
 const AccordionContent = styled.div`
-  font-size: 16px;
+  font-size: 15px;
   text-align: justify;
   padding: 10px 20px;
   background-color: #ffffff;
 
   @media (max-width: 768px) {
-    font-size: 15px;
+    font-size: 14px;
     padding: 8px 15px;
   }
 
   @media (max-width: 480px) {
-    font-size: 14px;
+    font-size: 13px;
     padding: 6px 10px;
   }
 `;
