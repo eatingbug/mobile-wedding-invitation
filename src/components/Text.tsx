@@ -28,6 +28,12 @@ export const Paragraph = styled.p`
   line-height: 1.5rem;
   white-space: pre-line;
   text-align: center;
+
+  @media (max-width: 768px) {
+    font-size: 0.9rem;
+    width: 90%;
+    padding: 8px 16px;
+  }
 `;
 
 export const Caption = styled.p<{ textAlign?: string }>`
