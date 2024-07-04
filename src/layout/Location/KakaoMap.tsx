@@ -13,8 +13,8 @@ export default function KakaoMap() {
 
   const markerImage = {
     src: weddingIcon, // 마커 이미지 URL
-    size: { width: 34, height: 39 },
-    options: { offset: { x: 20, y: 40 } },
+    size: { width: 34, height: 34 },
+    options: { offset: { x: 17, y: 38 } },
   };
 
   return (
