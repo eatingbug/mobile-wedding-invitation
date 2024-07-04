@@ -12,7 +12,9 @@ const Location = () => {
       <PointTitle>{mapInfo.address1}</PointTitle>
       <Caption textAlign={'center'}>{mapInfo.address2}</Caption>
       {/* <MainImg src={mapImage}/> */}
-      <KakaoMap />
+      <MapContainer>
+        <KakaoMap />
+      </MapContainer>
       <Address />
     </LocationWrapper>
   );
@@ -26,10 +28,15 @@ const LocationWrapper = styled.div`
   flex-direction: column;
 `;
 
-// const MainImg = styled.img`
-//   max-width: 800px;
-//   padding-top: 20px;
-//   display: flex;
-//   justify-content: center; /* 가로 중앙 정렬 */
-//   align-items: center; /* 세로 중앙 정렬 */
-// `;
+const MapContainer = styled.div`
+  width: 100%;
+  height: 360px;
+
+  @media (max-width: 768px) {
+    height: 300px; // 모바일에서 지도의 높이를 더 작게 설정
+  }
+
+  @media (max-width: 480px) {
+    height: 250px; // 더 작은 화면에서 지도의 높이를 더 작게 설정
+  }
+`;
