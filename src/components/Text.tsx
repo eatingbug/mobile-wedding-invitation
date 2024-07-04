@@ -28,18 +28,6 @@ export const Paragraph = styled.p`
   line-height: 1.5rem;
   white-space: pre-line;
   text-align: center;
-
-  @media (max-width: 1024px) {
-    font-size: 1rem; /* 태블릿 화면 크기 (1024px 이하) */
-  }
-
-  @media (max-width: 768px) {
-    font-size: 0.9rem; /* 모바일 화면 크기 (768px 이하) */
-  }
-
-  @media (max-width: 480px) {
-    font-size: 0.8rem; /* 작은 모바일 화면 크기 (480px 이하) */
-  }
 `;
 
 export const Caption = styled.p<{ textAlign?: string }>`
