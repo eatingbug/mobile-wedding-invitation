@@ -23,22 +23,22 @@ export const PointTitle = styled.p`
 `;
 
 export const Paragraph = styled.p`
-  font-size: 1.25rem; /* 기본 글꼴 크기 */
+  font-size: 1.1rem; /* 기본 글꼴 크기 */
   color: #2f2120;
   line-height: 1.5rem;
   white-space: pre-line;
   text-align: center;
 
   @media (max-width: 1024px) {
-    font-size: 1.125rem; /* 태블릿 화면 크기 (1024px 이하) */
+    font-size: 1rem; /* 태블릿 화면 크기 (1024px 이하) */
   }
 
   @media (max-width: 768px) {
-    font-size: 1rem; /* 모바일 화면 크기 (768px 이하) */
+    font-size: 0.9rem; /* 모바일 화면 크기 (768px 이하) */
   }
 
   @media (max-width: 480px) {
-    font-size: 0.875rem; /* 작은 모바일 화면 크기 (480px 이하) */
+    font-size: 0.8rem; /* 작은 모바일 화면 크기 (480px 이하) */
   }
 `;
 

@@ -1,5 +1,7 @@
 import styled from '@emotion/styled';
 import Copy from '@/assets/icons/copy.svg?react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import kakaopay from '@/assets/icons/kakaopay.png?url';
 import toss from '@/assets/icons/toss.png?url';
 
@@ -11,21 +13,22 @@ interface IAccountProps {
   kakaopayAccount?: string;
   tossAccount?: string;
 }
-const AccountWrap = ({
+const AccountWrap: React.FC<IAccountProps> = ({
   name,
   relation,
   bank,
   account,
   kakaopayAccount,
   tossAccount,
-}: IAccountProps) => {
+}) => {
   const handleCopy = () => {
+    toast.dismiss();
     navigator.clipboard.writeText(account).then(
       () => {
-        alert('계좌번호가 복사되었습니다.😉😉');
+        toast.success('계좌번호가 복사되었습니다.');
       },
       () => {
-        alert('계좌번호 복사에 실패했습니다.🥲🥲');
+        toast.error('계좌번호 복사에 실패했습니다.');
       },
     );
   };
@@ -56,6 +59,7 @@ const AccountWrap = ({
           </AccountButton>
         )}
       </AccountLinks>
+      <ToastContainer limit={1} />
     </Wrapper>
   );
 };
