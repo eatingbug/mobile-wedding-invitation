@@ -1,6 +1,4 @@
-import { Map, MapMarker, useKakaoLoader } from "react-kakao-maps-sdk"
-import { useEffect, useRef, useState } from 'react';
-import styled from '@emotion/styled';
+import { Map, MapMarker, CustomOverlayMap, useKakaoLoader } from "react-kakao-maps-sdk"
 import weddingIcon from '@/assets/icons/wedding.png';
 
 export default function KakaoMap() {
@@ -10,8 +8,6 @@ export default function KakaoMap() {
   })
   if (error) return <div>Error</div>
 
-  const mapRef = useRef<any>(null); // 지도 인스턴스를 참조하기 위한 ref
-  const [center, setCenter] = useState({ lat: 37.567126, lng: 126.82673 });
   const position = { lat: 37.567126, lng: 126.82673 };
 
   const markerImage = {
@@ -20,79 +16,37 @@ export default function KakaoMap() {
     options: { offset: { x: 15, y: 32 } },
   };
 
-  useEffect(() => {
-    const handleResize = () => {
-      if (mapRef.current) {
-        const map = mapRef.current;
-        const newCenter = map.getCenter();
-        setCenter({
-          lat: newCenter.getLat(),
-          lng: newCenter.getLng(),
-        });
-      }
-    };
-
-    window.addEventListener('resize', handleResize);
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }
-  )
   return (
     <Map
-      center={center}
+      center={position}
       style={{ width: '100%', height: '100%' }}
       level={4}
-      ref={mapRef}
-        onCenterChanged={(map) => {
-          const newCenter = map.getCenter();
-          setCenter({
-            lat: newCenter.getLat(),
-            lng: newCenter.getLng(),
-          });
-        }}
     >
-      <MapMarker position={position} image={markerImage}>
-        {/* MapMarker의 자식을 넣어줌으로 해당 자식이 InfoWindow로 만들어지게 합니다 */}
-        {/* 인포윈도우에 표출될 내용으로 HTML 문자열이나 React Component가 가능합니다 */}
-        <div style={{ padding: "5px", color: "#000" }}>
-          보타닉파크웨딩 <br />
-          <a
-            href="https://map.kakao.com/link/map/1089036510"
-            style={{ color: "blue" }}
-            target="_blank"
-            rel="noreferrer"
-          >
-            지도보기
-          </a>{" "}
-          <a
+      <MapMarker position={position} image={markerImage} />
+      <CustomOverlayMap position={position} yAnchor={1.85}>
+        <div style={{
+          background: 'white',
+          border: '1px solid #ccc',
+          padding: '5px',
+          borderRadius: '5px',
+          boxShadow: '0 2px 6px rgba(0, 0, 0, 0.3)',
+          fontSize: '0.9rem',
+          color: '#000'
+        }}>
+          {/* <div style={{ fontWeight: 'bold' }}>보타닉파크웨딩</div> */}
+          <a href="https://map.kakao.com/link/map/1089036510" target="_blank" rel="noreferrer" style={{ color: 'red', fontWeight: 'bold', textDecoration: 'none' }}>
+            보타닉파크웨딩
+          </a>
+          {/* <a
             href="https://map.kakao.com/link/to/1089036510"
-            style={{ color: "blue" }}
             target="_blank"
             rel="noreferrer"
+            style={{ color: 'blue', textDecoration: 'none' }}
           >
             길찾기
-          </a>
+          </a> */}
         </div>
-      </MapMarker>
+      </CustomOverlayMap>
     </Map>
   );
 };
-
-
-const MarkerText = styled.span`
-  background: white;
-  border: 1px solid #ccc;
-  padding: 2px 5px;
-  border-radius: 3px;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-  font-size: 12px;
-  color: #000;
-  white-space: nowrap;
-  position: absolute;
-  // bottom: 100%; /* 마커의 상단에 위치하게 합니다 */
-  left: 50%;
-  transform: translateX(40%); /* 수평 중심 맞춤 */
-  margin-bottom: 10px; /* 마커와의 간격 */
-`;

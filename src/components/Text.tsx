@@ -43,12 +43,12 @@ export const Caption = styled.p<{ textAlign?: string }>`
 
   @media (max-width: 768px) {
     /* 화면 폭이 768px 이하일 때의 스타일 */
-    font-size: 14px;
+    font-size: 18px;
   }
 
   @media (min-width: 769px) and (max-width: 1024px) {
     /* 화면 폭이 769px 이상이고 1024px 이하일 때의 스타일 */
-    font-size: 16px;
+    font-size: 18px;
   }
 
   @media (min-width: 1025px) {
