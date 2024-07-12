@@ -12,7 +12,7 @@ const GalleryWrap = () => {
   return (
     <ContentsWrap>
       <ImageMoreWrap isMoreView={isMoreView}>
-        {!isMoreView && <WhiteGradientOverlay />}
+        {!isMoreView && <WhiteGradientOverlay onClick={onClickImageMoreViewButton}/>}
         <PhotoGallery />
       </ImageMoreWrap>
       {!isMoreView && (
