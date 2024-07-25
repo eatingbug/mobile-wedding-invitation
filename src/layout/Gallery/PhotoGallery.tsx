@@ -19,14 +19,17 @@ const PhotoGallery = () => {
           gridGap: 2,
         }}>
         {images.map((image, index) => {
+          const width = image.width ? image.width.toString() : "1280";
+          const height = image.height ? image.height.toString() : "1920";
+          
           return (
             <Item
               key={index}
               cropped
               original={image.source}
               thumbnail={image.source}
-              width="1280"
-              height="1920">
+              width={width}
+              height={height}>
               {({ ref, open }) => (
                 <img
                   style={smallItemStyles}

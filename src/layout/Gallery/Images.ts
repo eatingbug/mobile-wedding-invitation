@@ -29,12 +29,10 @@ const images = [   /* 이미지 경로를 리스트로 저장 */
   {
     alt: 'image01',
     source: image01,
-  },
-  {
+  },{
     alt: 'image02',
     source: image02,
-  },
-  {
+  },{
     alt: 'image03',
     source: image03,
   },{
@@ -67,12 +65,10 @@ const images = [   /* 이미지 경로를 리스트로 저장 */
   },{
     alt: 'image13',
     source: image13,
-  },
-  {
+  },{
     alt: 'image14',
     source: image14,
-  },
-  {
+  },{
     alt: 'image15',
     source: image15,
   },{
@@ -99,15 +95,23 @@ const images = [   /* 이미지 경로를 리스트로 저장 */
   },{
     alt: 'image23',
     source: image23,
+    width: 1500,
+    height: 1000,
   },{
     alt: 'image24',
     source: image24,
+    width: 1500,
+    height: 1000,
   },{
     alt: 'image25',
     source: image25,
+    width: 1500,
+    height: 1000,
   },{
     alt: 'image26',
     source: image26,
+    width: 1500,
+    height: 1000,
   }
 ];
 
