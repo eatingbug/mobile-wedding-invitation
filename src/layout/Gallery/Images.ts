@@ -22,8 +22,6 @@ import image21 from '@/assets/images/21.jpeg'
 import image22 from '@/assets/images/22.jpeg'
 import image23 from '@/assets/images/23.jpeg'
 import image24 from '@/assets/images/24.jpeg'
-import image25 from '@/assets/images/25.jpeg'
-import image26 from '@/assets/images/26.jpeg'
 
 const images = [   /* 이미지 경로를 리스트로 저장 */
   {
@@ -92,6 +90,8 @@ const images = [   /* 이미지 경로를 리스트로 저장 */
   },{
     alt: 'image22',
     source: image22,
+    width: 1500,
+    height: 1000,
   },{
     alt: 'image23',
     source: image23,
@@ -100,16 +100,6 @@ const images = [   /* 이미지 경로를 리스트로 저장 */
   },{
     alt: 'image24',
     source: image24,
-    width: 1500,
-    height: 1000,
-  },{
-    alt: 'image25',
-    source: image25,
-    width: 1500,
-    height: 1000,
-  },{
-    alt: 'image26',
-    source: image26,
     width: 1500,
     height: 1000,
   }
